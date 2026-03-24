@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LM Frotas | Veículos Abaixo da FIPE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;family=Montserrat:wght@700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Custom metallic gold gradient based on logo */
+        .bg-gold-metallic {
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+        }
+
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#1a1919",
+                        "surface-tint": "#D4AF37",
+                        "secondary-container": "#544519",
+                        "tertiary": "#bfcdff",
+                        "on-primary-fixed": "#241a00",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#D4AF37",
+                        "surface-container-high": "#1e2126",
+                        "outline": "#99907c",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary": "#D4AF37",
+                        "on-secondary": "#3c2f05",
+                        "secondary-fixed": "#f7e1a6",
+                        "surface": "#1a1919",
+                        "surface-variant": "#262525",
+                        "on-secondary-fixed-variant": "#544519",
+                        "primary-fixed-dim": "#D4AF37",
+                        "on-background": "#f9fafb",
+                        "tertiary-container": "#97b0ff",
+                        "background": "#1a1919",
+                        "on-tertiary": "#082b72",
+                        "secondary-fixed-dim": "#dac58d",
+                        "outline-variant": "#4d4635",
+                        "on-surface": "#f9fafb",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-secondary-container": "#c8b37d",
+                        "surface-container-highest": "#374151",
+                        "on-tertiary-fixed": "#00174b",
+                        "primary-fixed": "#ffe088",
+                        "surface-bright": "#262525",
+                        "secondary": "#dac58d",
+                        "on-primary-container": "#000000",
+                        "inverse-on-surface": "#1a1919",
+                        "on-primary": "#000000",
+                        "surface-dim": "#1a1919",
+                        "inverse-primary": "#735c00",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#141313",
+                        "on-tertiary-container": "#254188",
+                        "inverse-surface": "#f9fafb",
+                        "surface-container-low": "#1a1919",
+                        "on-surface-variant": "#9ca3af",
+                        "on-tertiary-fixed-variant": "#27438a"
+                    },
+                    fontFamily: {
+                        "headline": ["Montserrat", "Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="text-on-surface font-body selection:bg-primary selection:text-black" style="background-color: #1a1919;">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl transition-colors duration-300 border-b border-white/5"
+        style="background-color: rgba(26, 25, 25, 0.9);">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <img alt="LM Frotas Logo"
+                    class="h-10 object-contain transition-all duration-300 hover:scale-110 origin-left drop-shadow-[0_0_10px_rgba(212,175,55,0.4)] hover:drop-shadow-[0_0_15px_rgba(212,175,55,0.7)]"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0uiCSIlzs-CQuGHuwEhk8VQ4Ma1C2-Phy_lQwDrC6n0kGK7py9cqokmcaYtX_x9EmGJASbdkfyWhbyCrDproq5VuASQyf_kzB2_wcdBuXuVt1z8sAJGKHSEMI3CXdqW9Q7avbWjHC3hUQvwmIolqoW8oumJMcXxWtbdmU3dCs9c9E7fwxuP7uFSgc4OD22EfpSK7WMSrXfAXVb5zRlbQvxFWGltbQEWojwF25TnFLXdSQZaXTOdeAY3KuVaSbiVRDfq8_-zhB5e0cA" />
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="#solutions">Soluções</a>
+                <a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium"
+                    href="#benefits">Benefícios</a>
+                <a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium"
+                    href="https://wa.me/5511968993055?text=Olá! Tudo bem? Vim pelo site e tenho interesse em comprar um carro. Gostaria de falar com um especialista."
+                    target="_blank">Contato</a>
+            </div>
+            <a href="https://wa.me/5511968993055?text=Olá! Tudo bem? Vim pelo site e tenho interesse em comprar um carro. Gostaria de falar com um especialista."
+                target="_blank"
+                class="bg-gold-metallic text-black px-6 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all active:scale-95 duration-200 ease-in-out shadow-[0_0_15px_rgba(212,175,55,0.2)] text-sm inline-block text-center flex items-center justify-center">
+                Solicitar Cotação
+            </a>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center pt-32 pb-20 overflow-hidden bg-[#1a1919]">
+            <div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
+                <div class="lg:col-span-7 space-y-10">
+                    <div class="space-y-6">
+                        <h1
+                            class="text-5xl md:text-7xl font-headline font-black text-on-surface leading-[1.1] tracking-tight transition-all duration-300 hover:scale-105 origin-left drop-shadow-[0_0_15px_rgba(212,175,55,0.25)] hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">
+                            Compre Veículos <br /><span class="text-gold-metallic">Abaixo da FIPE</span> com Negociação
+                            Rápida.
+                        </h1>
+                        <p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                            Soluções completas para compra de veículos em frota ou avulso, com negociação ágil para
+                            clientes e lojistas parceiros.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="https://wa.me/5511968993055?text=Olá! Tudo bem? Vim pelo site e tenho interesse em comprar um carro. Gostaria de falar com um especialista."
+                            target="_blank"
+                            class="bg-gold-metallic text-black px-10 py-4 rounded-xl font-bold text-lg hover:brightness-110 shadow-[0_10px_30px_rgba(212,175,55,0.25)] transition-all active:scale-95 inline-block text-center flex items-center justify-center">
+                            Solicitar Cotação
+                        </a>
+                        <a class="border-2 border-primary/50 text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary/10 transition-all flex items-center gap-2 backdrop-blur-sm"
+                            href="https://wa.me/5511968993055?text=Olá! Tudo bem? Vim pelo site e tenho interesse em comprar um carro. Gostaria de falar com um especialista."
+                            target="_blank">
+                            <span class="material-symbols-outlined">chat</span>
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative group">
+                    <div
+                        class="absolute -inset-4 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700">
+                    </div>
+                    <img alt="Composition of Vehicles"
+                        class="relative z-10 w-full h-auto object-contain transform hover:scale-105 transition-transform duration-700 drop-shadow-2xl"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0ujNGhGLRBwvzOKmcJzrqhpDMCUk6OZy_JGwy0LU5OcpsKgZddEfGc2Nfmja2hgXa7mh_-py1SXsfez9IhEqwyCRp3PibYtuJMbJnn3OML5wAA3MZJJUtQCttYXvuKtqFneBEkiP0OdNflMATYPD1m3bYfDelRmSCpwVtlprFDEiumpR-zZ1Y3bXBzaIg0djsHs4WAwdnZ6oLZuVuA8DfgDqke-2eNlwBLSqc0HaM67t-SSqQIJv1eSNxcDr3MyDaliFEMBC4H07Ow" />
+                </div>
+            </div>
+        </section>
+        <!-- Authority Numbers -->
+        <section class="bg-[#1a1919] py-16 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+                    <div class="text-center group">
+                        <div
+                            class="text-4xl md:text-5xl font-headline font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
+                            +10 anos</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant font-bold">No mercado
+                        </div>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="text-4xl md:text-5xl font-headline font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
+                            +2.000</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant font-bold">Veículos
+                            vendidos</div>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="text-4xl md:text-5xl font-headline font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
+                            +300</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant font-bold">Empresas
+                            atendidas</div>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="text-4xl md:text-5xl font-headline font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
+                            Nacional</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant font-bold">Atendimento
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Benefits Section -->
+        <section class="py-32 bg-[#1a1919]" id="benefits">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="mb-24 text-center">
+                    <h2 class="text-4xl md:text-5xl font-headline font-bold mb-6">Por que escolher nossas <br /><span
+                            class="text-gold-metallic">soluções em veículos?</span></h2>
+                    <div class="h-1.5 w-24 bg-gold-metallic rounded-full mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Benefit 1 -->
+                    <div
+                        class="p-10 bg-[#262525] rounded-3xl border border-white/5 hover:border-primary/30 transition-all group shadow-lg flex flex-col items-center text-center">
+                        <div
+                            class="w-20 h-20 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-5xl">corporate_fare</span>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-on-surface mb-4">Condições especiais para
+                            empresas</h3>
+                        <p class="text-on-surface-variant leading-relaxed text-sm">Taxas exclusivas e benefícios fiscais
+                            otimizados para seu CNPJ.</p>
+                    </div>
+                    <!-- Benefit 2 -->
+                    <div
+                        class="p-10 bg-[#262525] rounded-3xl border border-white/5 hover:border-primary/30 transition-all group shadow-lg flex flex-col items-center text-center">
+                        <div
+                            class="w-20 h-20 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-5xl">verified</span>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-on-surface mb-4">Veículos selecionados e
+                            revisados</h3>
+                        <p class="text-on-surface-variant leading-relaxed text-sm">Rigoroso controle de qualidade em
+                            cada unidade do nosso estoque.</p>
+                    </div>
+                    <!-- Benefit 3 -->
+                    <div
+                        class="p-10 bg-[#262525] rounded-3xl border border-white/5 hover:border-primary/30 transition-all group shadow-lg flex flex-col items-center text-center">
+                        <div
+                            class="w-20 h-20 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-5xl">bolt</span>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-on-surface mb-4">Agilidade total na negociação
+                        </h3>
+                        <p class="text-on-surface-variant leading-relaxed text-sm">Processos desburocratizados para
+                            garantir rapidez na entrega.</p>
+                    </div>
+                    <!-- Benefit 4 -->
+                    <div
+                        class="p-10 bg-[#262525] rounded-3xl border border-white/5 hover:border-primary/30 transition-all group shadow-lg flex flex-col items-center text-center">
+                        <div
+                            class="w-20 h-20 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined text-primary text-5xl">support_agent</span>
+                        </div>
+                        <h3 class="text-xl font-headline font-bold text-on-surface mb-4">Atendimento consultivo
+                            personalizado</h3>
+                        <p class="text-on-surface-variant leading-relaxed text-sm">Consultores dedicados a entender a
+                            necessidade real do seu negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fleet vs Individual -->
+        <section class="py-32 bg-[#1a1919] overflow-hidden" id="solutions">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+                    <!-- Fleet -->
+                    <div class="space-y-12">
+                        <div class="relative group">
+                            <div class="aspect-[16/9] overflow-hidden rounded-3xl border border-white/10">
+                                <img alt="Corporate Fleet"
+                                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-110"
+                                    src="https://lh3.googleusercontent.com/aida/ADBb0uinLrPjJCepq0Kv3adZSPfaR2BpC1j7NZ7-vxYObk-g-QaPOg4EC3glgMXFuFi1NigRD7BGUk_NkSdyLdLIu_hCe1P79BhAoNKNW_QN-ndB_NmHSK3E-rbFYx0L2E0nmFtdoYe0FwNSVd6-eHoN1tWuB5FwVlqlPhtk9WA9X0llZLpqbNprxXtUh8EFhVVUjsuXbZ_vhJmCDwNmGPVK5usKXW8CqeuBM7zCNW_OZa2aiNnnYedSyDBfBZK0AlTlklScWUY6Y9C1" />
+                            </div>
+                            <div
+                                class="absolute -bottom-6 -right-6 bg-gold-metallic p-6 rounded-3xl hidden lg:flex items-center justify-center shadow-2xl">
+                                <span class="material-symbols-outlined text-black text-4xl">inventory_2</span>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-headline font-bold text-primary flex items-center gap-4">
+                                <span class="w-12 h-0.5 bg-primary/40"></span>
+                                Soluções para Frotas
+                            </h2>
+                            <ul class="space-y-5">
+                                <li class="flex items-center gap-4 text-lg group">
+                                    <span
+                                        class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">check_circle</span>
+                                    <span class="text-on-surface-variant">Descontos progressivos por volume</span>
+                                </li>
+                                <li class="flex items-center gap-4 text-lg group">
+                                    <span
+                                        class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">check_circle</span>
+                                    <span class="text-on-surface-variant">Planejamento estratégico de renovação</span>
+                                </li>
+                                <li class="flex items-center gap-4 text-lg group">
+                                    <span
+                                        class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">check_circle</span>
+                                    <span class="text-on-surface-variant">Atendimento dedicado corporativo</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Individual -->
+                    <div class="space-y-12 md:mt-24">
+                        <div class="relative group">
+                            <div class="aspect-[16/9] overflow-hidden rounded-3xl border border-white/10">
+                                <img alt="Premium Individual Vehicle"
+                                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-110"
+                                    src="https://lh3.googleusercontent.com/aida/ADBb0ujruKi22wbHpqaXiRdrZUHQyS2ma_wgzz-IyErC9vI5g5NeUabx9Gmjq_WkI5IAay7xoyRzU7NGRfNlZa9h6hqt8p7FyC0viEvpRR0JecgLL9TqypHbN25Nrs96fnXI9dVZPY7SxkSvaOLSamSFbYRqCcbjTHFhNqCztmMOHFu8EPeeHjLwh_0-gya5fl6VJjO4yM51TT9rUAGcRYYRPUsjyjJwrUN2vQfeB874vGPQ3sKT_FI0y_xLG155aNO59BsDgK69qpFEPw" />
+                            </div>
+                            <div
+                                class="absolute -bottom-6 -left-6 bg-[#262525] p-6 rounded-3xl hidden lg:flex items-center justify-center border border-primary/20 shadow-2xl backdrop-blur-md">
+                                <span class="material-symbols-outlined text-primary text-4xl">person</span>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-headline font-bold text-primary flex items-center gap-4">
+                                <span class="w-12 h-0.5 bg-primary/40"></span>
+                                Soluções para Indivíduos
+                            </h2>
+                            <ul class="space-y-5">
+                                <li class="flex items-center gap-4 text-lg group">
+                                    <span
+                                        class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">check_circle</span>
+                                    <span class="text-on-surface-variant">Veículos premium seminovos</span>
+                                </li>
+                                <li class="flex items-center gap-4 text-lg group">
+                                    <span
+                                        class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">check_circle</span>
+                                    <span class="text-on-surface-variant">Negociação rápida e transparente</span>
+                                </li>
+                                <li class="flex items-center gap-4 text-lg group">
+                                    <span
+                                        class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">check_circle</span>
+                                    <span class="text-on-surface-variant">Opções exclusivas de financiamento</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <!-- Final CTA / Conversion -->
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#141313] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row justify-between items-start gap-12">
+            <div class="space-y-8">
+                <img alt="LM Frotas Logo" class="h-6 object-contain"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0uiCSIlzs-CQuGHuwEhk8VQ4Ma1C2-Phy_lQwDrC6n0kGK7py9cqokmcaYtX_x9EmGJASbdkfyWhbyCrDproq5VuASQyf_kzB2_wcdBuXuVt1z8sAJGKHSEMI3CXdqW9Q7avbWjHC3hUQvwmIolqoW8oumJMcXxWtbdmU3dCs9c9E7fwxuP7uFSgc4OD22EfpSK7WMSrXfAXVb5zRlbQvxFWGltbQEWojwF25TnFLXdSQZaXTOdeAY3KuVaSbiVRDfq8_-zhB5e0cA" />
+                <p class="text-on-surface-variant text-sm max-w-xs leading-relaxed">Excelência em soluções automotivas
+                    para frotas corporativas e clientes individuais premium.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-primary text-xl">language</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                        href="https://www.instagram.com/lmfrotas/?utm_source=ig_web_button_share_sheet" target="_blank">
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewbox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.778 6.98 6.978 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+                <div class="space-y-6">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest">Navegação</span>
+                    <ul class="space-y-4">
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                                href="#solutions">Soluções</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                                href="#benefits">Benefícios</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                                href="https://wa.me/5511968993055?text=Olá! Tudo bem? Vim pelo site e tenho interesse em comprar um carro. Gostaria de falar com um especialista."
+                                target="_blank">Cotação</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest">Suporte</span>
+                    <ul class="space-y-4">
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                                href="#">Privacidade</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                                href="https://wa.me/5511968993055?text=Olá! Tudo bem? Vim pelo site e tenho interesse em comprar um carro. Gostaria de falar com um especialista.">WhatsApp</a>
+                        </li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm"
+                                href="#">E-mail</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6 col-span-2 md:col-span-1">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest">Local</span>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Atendimento Premium em todo território
+                        nacional.</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 py-8 border-t border-white/5 text-center md:text-left">
+            <p class="text-on-surface-variant text-xs opacity-50">© 2024 LM Frotas. Todos os direitos reservados.
+                Negociações seguras e ágeis.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
